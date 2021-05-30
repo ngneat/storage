@@ -1,0 +1,239 @@
+1c01aa11a0d55a4ccf1a3bad9edce45e
+"use strict";
+
+/* istanbul ignore next */
+function cov_1oc2lx6lsi() {
+  var path = "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/sessionStorageManager.ts";
+  var hash = "203a6a400ca00d2bfcd190d245215782a97d0d41";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/sessionStorageManager.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 39
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 58
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 20
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 63
+        }
+      },
+      "5": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 54
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 24
+          },
+          end: {
+            line: 8,
+            column: 5
+          }
+        },
+        line: 5
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 18
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 9
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 10,
+            column: 26
+          },
+          end: {
+            line: 10,
+            column: 61
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 10,
+            column: 26
+          },
+          end: {
+            line: 10,
+            column: 53
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 57
+          },
+          end: {
+            line: 10,
+            column: 61
+          }
+        }],
+        line: 10
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/sessionStorageManager.ts",
+      mappings: ";;;AAEA,MAAa,qBAAqB;IAChC,QAAQ,CAAC,GAAW,EAAE,IAAO;QAC3B,cAAc,CAAC,OAAO,CAAC,GAAG,EAAE,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC,CAAC,CAAC;QAClD,OAAO,IAAI,CAAC;IACd,CAAC;IAED,QAAQ,CAAC,GAAW;QAClB,OAAO,IAAI,CAAC,KAAK,CAAC,cAAc,CAAC,OAAO,CAAC,GAAG,CAAC,IAAI,IAAI,CAAC,CAAC;IACzD,CAAC;CACF;AATD,sDASC",
+      names: [],
+      sources: ["/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/sessionStorageManager.ts"],
+      sourcesContent: ["import { PersistManager } from \"./persistManager\";\n\nexport class SessionStorageManager<T> implements PersistManager<T> {\n  setValue(key: string, data: T): T {\n    sessionStorage.setItem(key, JSON.stringify(data));\n    return data;\n  }\n\n  getValue(key: string): T {\n    return JSON.parse(sessionStorage.getItem(key) || '{}');\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "203a6a400ca00d2bfcd190d245215782a97d0d41"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1oc2lx6lsi = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1oc2lx6lsi();
+cov_1oc2lx6lsi().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1oc2lx6lsi().s[1]++;
+exports.SessionStorageManager = void 0;
+
+class SessionStorageManager {
+  setValue(key, data) {
+    /* istanbul ignore next */
+    cov_1oc2lx6lsi().f[0]++;
+    cov_1oc2lx6lsi().s[2]++;
+    sessionStorage.setItem(key, JSON.stringify(data));
+
+    /* istanbul ignore next */
+    cov_1oc2lx6lsi().s[3]++;
+    return data;
+  }
+
+  getValue(key) {
+    /* istanbul ignore next */
+    cov_1oc2lx6lsi().f[1]++;
+    cov_1oc2lx6lsi().s[4]++;
+    return JSON.parse(
+    /* istanbul ignore next */
+    (cov_1oc2lx6lsi().b[0][0]++, sessionStorage.getItem(key)) ||
+    /* istanbul ignore next */
+    (cov_1oc2lx6lsi().b[0][1]++, '{}'));
+  }
+
+}
+
+/* istanbul ignore next */
+cov_1oc2lx6lsi().s[5]++;
+exports.SessionStorageManager = SessionStorageManager;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3N0ZWZhbi9Eb2N1bWVudHMvcHJvamVjdHMvSG9BL3N0b3JhZ2UvcHJvamVjdHMvbmduZWF0L3N0b3JhZ2Uvc3JjL2xpYi9zZXNzaW9uU3RvcmFnZU1hbmFnZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFFQSxNQUFhLHFCQUFiLENBQWtDO0FBQ2hDLEVBQUEsUUFBUSxDQUFDLEdBQUQsRUFBYyxJQUFkLEVBQXFCO0FBQUE7QUFBQTtBQUFBO0FBQzNCLElBQUEsY0FBYyxDQUFDLE9BQWYsQ0FBdUIsR0FBdkIsRUFBNEIsSUFBSSxDQUFDLFNBQUwsQ0FBZSxJQUFmLENBQTVCOztBQUQyQjtBQUFBO0FBRTNCLFdBQU8sSUFBUDtBQUNEOztBQUVELEVBQUEsUUFBUSxDQUFDLEdBQUQsRUFBWTtBQUFBO0FBQUE7QUFBQTtBQUNsQixXQUFPLElBQUksQ0FBQyxLQUFMO0FBQVc7QUFBQSxpQ0FBQSxjQUFjLENBQUMsT0FBZixDQUF1QixHQUF2QjtBQUFBO0FBQUEsaUNBQStCLElBQS9CLENBQVgsQ0FBUDtBQUNEOztBQVIrQjs7OztBQUFsQyxPQUFBLENBQUEscUJBQUEsR0FBQSxxQkFBQSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFBlcnNpc3RNYW5hZ2VyIH0gZnJvbSBcIi4vcGVyc2lzdE1hbmFnZXJcIjtcblxuZXhwb3J0IGNsYXNzIFNlc3Npb25TdG9yYWdlTWFuYWdlcjxUPiBpbXBsZW1lbnRzIFBlcnNpc3RNYW5hZ2VyPFQ+IHtcbiAgc2V0VmFsdWUoa2V5OiBzdHJpbmcsIGRhdGE6IFQpOiBUIHtcbiAgICBzZXNzaW9uU3RvcmFnZS5zZXRJdGVtKGtleSwgSlNPTi5zdHJpbmdpZnkoZGF0YSkpO1xuICAgIHJldHVybiBkYXRhO1xuICB9XG5cbiAgZ2V0VmFsdWUoa2V5OiBzdHJpbmcpOiBUIHtcbiAgICByZXR1cm4gSlNPTi5wYXJzZShzZXNzaW9uU3RvcmFnZS5nZXRJdGVtKGtleSkgfHwgJ3t9Jyk7XG4gIH1cbn1cbiJdfQ==
