@@ -1,0 +1,239 @@
+1095e166c4aba8ea30ab0b9cadf62447
+"use strict";
+
+/* istanbul ignore next */
+function cov_1gfjojcgca() {
+  var path = "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/localStorageManager.ts";
+  var hash = "ca61c7844424ff321bd7d69fb5acf5d0a25b0174";
+  var global = new Function("return this")();
+  var gcv = "__coverage__";
+  var coverageData = {
+    path: "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/localStorageManager.ts",
+    statementMap: {
+      "0": {
+        start: {
+          line: 2,
+          column: 0
+        },
+        end: {
+          line: 2,
+          column: 62
+        }
+      },
+      "1": {
+        start: {
+          line: 3,
+          column: 0
+        },
+        end: {
+          line: 3,
+          column: 37
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 8
+        },
+        end: {
+          line: 6,
+          column: 56
+        }
+      },
+      "3": {
+        start: {
+          line: 7,
+          column: 8
+        },
+        end: {
+          line: 7,
+          column: 20
+        }
+      },
+      "4": {
+        start: {
+          line: 10,
+          column: 8
+        },
+        end: {
+          line: 10,
+          column: 61
+        }
+      },
+      "5": {
+        start: {
+          line: 13,
+          column: 0
+        },
+        end: {
+          line: 13,
+          column: 50
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 5,
+            column: 4
+          },
+          end: {
+            line: 5,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 5,
+            column: 24
+          },
+          end: {
+            line: 8,
+            column: 5
+          }
+        },
+        line: 5
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 9,
+            column: 4
+          },
+          end: {
+            line: 9,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 9,
+            column: 18
+          },
+          end: {
+            line: 11,
+            column: 5
+          }
+        },
+        line: 9
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 10,
+            column: 26
+          },
+          end: {
+            line: 10,
+            column: 59
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 10,
+            column: 26
+          },
+          end: {
+            line: 10,
+            column: 51
+          }
+        }, {
+          start: {
+            line: 10,
+            column: 55
+          },
+          end: {
+            line: 10,
+            column: 59
+          }
+        }],
+        line: 10
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0]
+    },
+    inputSourceMap: {
+      file: "/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/localStorageManager.ts",
+      mappings: ";;;AAEA,MAAa,mBAAmB;IAC9B,QAAQ,CAAC,GAAW,EAAE,IAAO;QAC3B,YAAY,CAAC,OAAO,CAAC,GAAG,EAAE,IAAI,CAAC,SAAS,CAAC,IAAI,CAAC,CAAC,CAAC;QAChD,OAAO,IAAI,CAAC;IACd,CAAC;IAED,QAAQ,CAAC,GAAW;QAClB,OAAO,IAAI,CAAC,KAAK,CAAC,YAAY,CAAC,OAAO,CAAC,GAAG,CAAC,IAAI,IAAI,CAAC,CAAC;IACvD,CAAC;CACF;AATD,kDASC",
+      names: [],
+      sources: ["/home/stefan/Documents/projects/HoA/storage/projects/ngneat/storage/src/lib/localStorageManager.ts"],
+      sourcesContent: ["import { PersistManager } from \"./persistManager\";\n\nexport class LocalStorageManager<T> implements PersistManager<T> {\n  setValue(key: string, data: T): T {\n    localStorage.setItem(key, JSON.stringify(data));\n    return data;\n  }\n\n  getValue(key: string): T {\n    return JSON.parse(localStorage.getItem(key) || '{}');\n  }\n}\n"],
+      version: 3
+    },
+    _coverageSchema: "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    hash: "ca61c7844424ff321bd7d69fb5acf5d0a25b0174"
+  };
+  var coverage = global[gcv] || (global[gcv] = {});
+
+  if (!coverage[path] || coverage[path].hash !== hash) {
+    coverage[path] = coverageData;
+  }
+
+  var actualCoverage = coverage[path];
+  {
+    // @ts-ignore
+    cov_1gfjojcgca = function () {
+      return actualCoverage;
+    };
+  }
+  return actualCoverage;
+}
+
+cov_1gfjojcgca();
+cov_1gfjojcgca().s[0]++;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+/* istanbul ignore next */
+cov_1gfjojcgca().s[1]++;
+exports.LocalStorageManager = void 0;
+
+class LocalStorageManager {
+  setValue(key, data) {
+    /* istanbul ignore next */
+    cov_1gfjojcgca().f[0]++;
+    cov_1gfjojcgca().s[2]++;
+    localStorage.setItem(key, JSON.stringify(data));
+
+    /* istanbul ignore next */
+    cov_1gfjojcgca().s[3]++;
+    return data;
+  }
+
+  getValue(key) {
+    /* istanbul ignore next */
+    cov_1gfjojcgca().f[1]++;
+    cov_1gfjojcgca().s[4]++;
+    return JSON.parse(
+    /* istanbul ignore next */
+    (cov_1gfjojcgca().b[0][0]++, localStorage.getItem(key)) ||
+    /* istanbul ignore next */
+    (cov_1gfjojcgca().b[0][1]++, '{}'));
+  }
+
+}
+
+/* istanbul ignore next */
+cov_1gfjojcgca().s[5]++;
+exports.LocalStorageManager = LocalStorageManager;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3N0ZWZhbi9Eb2N1bWVudHMvcHJvamVjdHMvSG9BL3N0b3JhZ2UvcHJvamVjdHMvbmduZWF0L3N0b3JhZ2Uvc3JjL2xpYi9sb2NhbFN0b3JhZ2VNYW5hZ2VyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBRUEsTUFBYSxtQkFBYixDQUFnQztBQUM5QixFQUFBLFFBQVEsQ0FBQyxHQUFELEVBQWMsSUFBZCxFQUFxQjtBQUFBO0FBQUE7QUFBQTtBQUMzQixJQUFBLFlBQVksQ0FBQyxPQUFiLENBQXFCLEdBQXJCLEVBQTBCLElBQUksQ0FBQyxTQUFMLENBQWUsSUFBZixDQUExQjs7QUFEMkI7QUFBQTtBQUUzQixXQUFPLElBQVA7QUFDRDs7QUFFRCxFQUFBLFFBQVEsQ0FBQyxHQUFELEVBQVk7QUFBQTtBQUFBO0FBQUE7QUFDbEIsV0FBTyxJQUFJLENBQUMsS0FBTDtBQUFXO0FBQUEsaUNBQUEsWUFBWSxDQUFDLE9BQWIsQ0FBcUIsR0FBckI7QUFBQTtBQUFBLGlDQUE2QixJQUE3QixDQUFYLENBQVA7QUFDRDs7QUFSNkI7Ozs7QUFBaEMsT0FBQSxDQUFBLG1CQUFBLEdBQUEsbUJBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBQZXJzaXN0TWFuYWdlciB9IGZyb20gXCIuL3BlcnNpc3RNYW5hZ2VyXCI7XG5cbmV4cG9ydCBjbGFzcyBMb2NhbFN0b3JhZ2VNYW5hZ2VyPFQ+IGltcGxlbWVudHMgUGVyc2lzdE1hbmFnZXI8VD4ge1xuICBzZXRWYWx1ZShrZXk6IHN0cmluZywgZGF0YTogVCk6IFQge1xuICAgIGxvY2FsU3RvcmFnZS5zZXRJdGVtKGtleSwgSlNPTi5zdHJpbmdpZnkoZGF0YSkpO1xuICAgIHJldHVybiBkYXRhO1xuICB9XG5cbiAgZ2V0VmFsdWUoa2V5OiBzdHJpbmcpOiBUIHtcbiAgICByZXR1cm4gSlNPTi5wYXJzZShsb2NhbFN0b3JhZ2UuZ2V0SXRlbShrZXkpIHx8ICd7fScpO1xuICB9XG59XG4iXX0=
