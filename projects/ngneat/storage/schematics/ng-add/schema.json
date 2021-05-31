@@ -10,11 +10,6 @@
       "$default": {
         "$source": "projectName"
       }
-    },
-    "skipImport": {
-      "type": "boolean",
-      "description": "Skip import in root module.",
-      "default": false
     }
   },
   "required": []
