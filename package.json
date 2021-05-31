@@ -18,7 +18,7 @@
     "test:lib:headless": "cross-env CI=true npm run test:lib",
     "postbuild:lib": "npm run build --prefix projects/ngneat/storage",
     "semantic-release": "semantic-release",
-    "lint": "ng lint"
+    "lint": "eslint ./projects ./src --ext .ts --ignore-pattern '*.spec.ts'"
   },
   "private": true,
   "dependencies": {
@@ -46,10 +46,13 @@
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "26.0.23",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "4.23.0",
+    "@typescript-eslint/parser": "4.23.0",
     "all-contributors-cli": "^6.20.0",
     "angular-cli-ghpages": "^1.0.0-rc.1",
     "cpx": "^1.5.0",
     "cross-env": "^7.0.3",
+    "eslint": "^7.26.0",
     "git-cz": "^4.7.6",
     "husky": "^5.1.2",
     "jasmine-core": "~3.7.0",
