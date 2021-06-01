@@ -11,7 +11,6 @@
     "contributors:add": "all-contributors add",
     "hooks:pre-commit": "node hooks/pre-commit.js",
     "commit": "cz",
-    "deploy": "ng deploy --base-href=https://username.github.io/repo/",
     "copy": "cpx README.md dist/ngneat/storage",
     "build:lib": "ng build @ngneat/storage --prod && npm run copy",
     "test:lib": "ng test @ngneat/storage",
