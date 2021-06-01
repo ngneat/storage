@@ -4,6 +4,8 @@
 
 <br />
 
+> The simple storage implementation with support for Observable and Promise
+
 [![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)]()
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
@@ -13,24 +15,17 @@
 [![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-> The Library Slogan
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ipsam iste iure, maxime modi molestiae nihil obcaecati odit officiis pariatur quibusdam suscipit temporibus unde.
-Accusantium aliquid corporis cupiditate dolores eum exercitationem illo iure laborum minus nihil numquam odit officiis possimus quas quasi quos similique, temporibus veritatis? Exercitationem, iure magni nulla quo sapiente soluta. Esse?
-
-## Features
-
-- ✅ One
-- ✅ Two
-- ✅ Three
+The 'storage' library is dedicated to support various implementation of storage which implements API similar to the 'localStorage.'. The biggest advantage is support for Observable and Promise. It's allow us to add support of the custom persistence manager within following libs: [@ngneat/reactive-forms](https://github.com/ngneat/reactive-forms), [@ngneat/forms-manager](https://github.com/ngneat/forms-manager), [@ngneat/cashew](https://github.com/ngneat/cashew)
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [FAQ](#faq)
 
 ## Installation
+
+`ng add @ngneat/storage`
 
 ### NPM
 
@@ -40,20 +35,32 @@ Accusantium aliquid corporis cupiditate dolores eum exercitationem illo iure lab
 
 `yarn add @ngneat/storage --dev`
 
+
 ## Usage
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ipsam iste iure, maxime modi molestiae nihil obcaecati odit officiis pariatur quibusdam suscipit temporibus unde.
+By default the library provides LocalStorageManager and SessionStorageManager. It's possible to store the form value into a custom storage. Just implement the PersistManager interface, and use it when calling the upsert function. Storage supports Promise and Observable
 
 ```ts
-function helloWorld() {}
+export class StateStoreManager<T> implements PersistManager<T> {
+  setValue(key: string, data: T) {
+     ...
+  }
+  getValue(key: string) {
+    ...
+  }
+}
 ```
 
-## FAQ
+Library also export's helper methods and types: 
 
-## How to ...
+####Types
+- `MaybeAsync` - Type that indicates that value might be Observable or Promise
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda atque blanditiis cum delectus eligendi ips
-
+####Functions
+- `wrapIntoObservable` - Wrap given value into Observable or return it's without modification if it's already is one
+- `isPromise` - Return information whether given value is Promise
+- `getFromStorage` - Return value for the given key from the specific PersistManager implementation
+- `updateStorage` - Set value for the given key inside the specific PersistManager implementation
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

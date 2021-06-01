@@ -25,10 +25,3 @@ export function updateStorage<T = any>(key: string, persistManager: PersistManag
     wrapIntoObservable(persistManager.setValue(key, storageValue)).pipe(first()).subscribe();
   });
 }
-
-export function removeFromStorage<T = any>(persistManager: PersistManager<T>, key: string, value: T) {
-  wrapIntoObservable(persistManager.setValue(
-    key,
-    value
-  )).pipe(first()).subscribe();
-}
