@@ -53,14 +53,13 @@ export class StateStoreManager<T> implements PersistManager<T> {
 
 Library also export's helper methods and types: 
 
-####Types
+###Types
 - `MaybeAsync` - Type that indicates that value might be Observable or Promise
 
-####Functions
-- `wrapIntoObservable` - Wrap given value into Observable or return it's without modification if it's already is one
-- `isPromise` - Return information whether given value is Promise
-- `getFromStorage` - Return value for the given key from the specific PersistManager implementation
-- `updateStorage` - Set value for the given key inside the specific PersistManager implementation
+###Class
+- `StorageFacade` - Accepts PersistManager implementation as parameter and implements get and update methods.
+  - `get` Return value for the given key
+  - `update` - Update storage under specific key using provided callback function.
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

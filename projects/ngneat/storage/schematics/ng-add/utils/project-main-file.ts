@@ -13,5 +13,5 @@ export const getProjectMainFile = (project: WorkspaceProject): string => {
     );
   }
 
-  return buildOptions.main;
+  return buildOptions.main as string;
 };

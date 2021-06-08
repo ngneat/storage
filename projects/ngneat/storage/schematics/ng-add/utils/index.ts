@@ -16,15 +16,13 @@ import {
 } from '@schematics/angular/utility/workspace-models';
 import { parse } from 'jsonc-parser';
 
-export const installPackageJsonDependencies = (): Rule => (
-  host: Tree,
-  context: SchematicContext
-) => {
-  context.addTask(new NodePackageInstallTask());
-  context.logger.log('info', `🔍 Installing packages...`);
+export const installPackageJsonDependencies =
+  (): Rule => (host: Tree, context: SchematicContext) => {
+    context.addTask(new NodePackageInstallTask());
+    context.logger.log('info', `🔍 Installing packages...`);
 
-  return host;
-};
+    return host;
+  };
 
 export const getProjectFromWorkspace = (
   workspace: WorkspaceSchema,
@@ -42,7 +40,7 @@ export const getProjectFromWorkspace = (
 export const getProjectTargetOptions = (
   project: WorkspaceProject,
   buildTarget: string
-): Record<string, any> => {
+): Record<string, unknown> => {
   const targetConfig =
     (project.architect && project.architect[buildTarget]) ||
     (project.targets && project.targets[buildTarget]);
@@ -56,12 +54,16 @@ export const getProjectTargetOptions = (
   );
 };
 
-const sortObjectByKeys = (obj: {
-  [key: string]: string;
-}): Record<string, any> =>
-  Object.keys(obj)
+function sortObjectByKeys(obj: Record<string, unknown>) {
+  return Object.keys(obj)
     .sort()
-    .reduce((result: any, key: any) => (result[key] = obj[key]) && result, {});
+    .reduce((result, key) => {
+      return {
+        ...result,
+        [key]: obj[key],
+      };
+    }, {});
+}
 
 export const addPackageToPackageJson = (
   host: Tree,
@@ -145,7 +147,7 @@ export const getWorkspacePath = (host: Tree): string => {
   return path;
 };
 
-export const getWorkspace = (host: Tree) => {
+export const getWorkspace = (host: Tree): undefined => {
   const path = getWorkspacePath(host);
   const configBuffer = host.read(path);
   if (configBuffer === null) {

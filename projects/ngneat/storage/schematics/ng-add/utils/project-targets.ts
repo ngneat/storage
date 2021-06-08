@@ -5,7 +5,7 @@ import { WorkspaceProject } from '@schematics/angular/utility/workspace-models';
 export const getProjectTargetOptions = (
   project: WorkspaceProject,
   buildTarget: string
-) => {
+): Record<string, unknown> => {
   if (
     project.targets &&
     project.targets[buildTarget] &&

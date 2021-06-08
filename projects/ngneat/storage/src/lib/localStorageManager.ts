@@ -1,4 +1,4 @@
-import { PersistManager } from "./persistManager";
+import { PersistManager } from './persistManager';
 
 export class LocalStorageManager<T> implements PersistManager<T> {
   setValue(key: string, data: T): T {
@@ -6,7 +6,12 @@ export class LocalStorageManager<T> implements PersistManager<T> {
     return data;
   }
 
-  getValue(key: string): T {
-    return JSON.parse(localStorage.getItem(key) || '{}');
+  getValue(key: string, defaultValue = undefined): T{
+    try {
+      const item = localStorage.getItem(key);
+      return item ? JSON.parse(item) : defaultValue;
+    } catch (error) {
+      return (defaultValue as unknown) as T;
+    }
   }
 }
