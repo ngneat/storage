@@ -1,4 +1,4 @@
-import { PersistManager } from "./persistManager";
+import { PersistManager } from './persistManager';
 
 export class SessionStorageManager<T> implements PersistManager<T> {
   setValue(key: string, data: T): T {
@@ -6,7 +6,12 @@ export class SessionStorageManager<T> implements PersistManager<T> {
     return data;
   }
 
-  getValue(key: string): T {
-    return JSON.parse(sessionStorage.getItem(key) || '{}');
+  getValue(key: string, defaultValue = undefined): T {
+    try {
+      const item = sessionStorage.getItem(key);
+      return item ? JSON.parse(item) : defaultValue;
+    } catch (error) {
+      return (defaultValue as unknown) as T;
+    }
   }
 }
